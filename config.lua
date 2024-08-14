@@ -16,6 +16,10 @@ lvim.plugins = {
   -- { "rose-pine/neovim" },
   { "meanderingprogrammer/markdown.nvim" },
   { "iabdelkareem/csharp.nvim" },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy"
+  }
   -- {
   -- "soulis-1256/eagle.nvim",
   -- branch = "new_features",
