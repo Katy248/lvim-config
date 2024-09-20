@@ -14,11 +14,23 @@ lvim.plugins = {
   { "abdelrahmandwedar/awesome-nvim-colorschemes" },
   -- { "rcarriga/nvim-notify" },
   -- { "rose-pine/neovim" },
-  { "meanderingprogrammer/markdown.nvim" },
+  -- { "meanderingprogrammer/markdown.nvim" },
   { "iabdelkareem/csharp.nvim" },
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy"
+  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {},
+  -- },
+  { "BlackLight/nvim-http" },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   -- {
   -- "soulis-1256/eagle.nvim",
@@ -96,3 +108,11 @@ local amogus = { "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
   "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" }
 
 lvim.builtin.alpha.dashboard.section.header.val = amogus
+
+local keys = lvim.builtin.which_key.mappings
+
+keys["r"] = { "<cmd>!bash -c make run<cr>", "Run `make run`" }
+
+-- add({
+-- { "<leader>r", "<cmd>terminal make run<cr>" },
+-- })
