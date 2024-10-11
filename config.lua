@@ -38,6 +38,9 @@ lvim.plugins = {
   -- config = true,
   -- },
 }
+lvim.keys.normal_mode['l'] = 'h'
+lvim.keys.normal_mode[';'] = 'l'
+
 
 local wall_min = {
   "________________________________________________",
