@@ -1,9 +1,10 @@
 vim.o.mousemoveevent = true
 
 -- visual
-lvim.colorscheme = "gruvbox"
--- lvim.colorscheme = "rose-pine-main"
 lvim.transparent_window = true
+-- lvim.colorscheme = "gruvbox"
+-- lvim.colorscheme = "rose-pine-main"
+lvim.colorscheme = "flexoki-dark"
 
 -- code
 lvim.format_on_save = true
@@ -16,6 +17,7 @@ lvim.plugins = {
   -- { "rose-pine/neovim" },
   -- { "meanderingprogrammer/markdown.nvim" },
   { "iabdelkareem/csharp.nvim" },
+  { 'kepano/flexoki-neovim',                      name = 'flexoki' },
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy"
@@ -38,8 +40,8 @@ lvim.plugins = {
   -- config = true,
   -- },
 }
-lvim.keys.normal_mode['l'] = 'h'
-lvim.keys.normal_mode[';'] = 'l'
+-- lvim.keys.normal_mode['l'] = 'h'
+-- lvim.keys.normal_mode[';'] = 'l'
 
 
 local wall_min = {
