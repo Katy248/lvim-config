@@ -112,8 +112,10 @@ keys["m"] = {
 lvim.builtin.terminal.open_mapping = "<C-/>"
 
 
-
-
--- add({
--- { "<leader>r", "<cmd>terminal make run<cr>" },
--- })
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+  {
+    name = "nixfmt",
+    filetypes = { "nix" }
+  }
+})
