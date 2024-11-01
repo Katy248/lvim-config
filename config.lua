@@ -4,29 +4,24 @@ vim.o.mousemoveevent = true
 lvim.transparent_window = true
 -- lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "rose-pine-main"
-lvim.colorscheme = "flexoki-dark"
+lvim.colorscheme = "gruvbox"
 
 -- code
 lvim.format_on_save = true
 
 
 lvim.plugins = {
-  -- { "lunarvim/colorschemes" },
   { "abdelrahmandwedar/awesome-nvim-colorschemes" },
-  -- { "rcarriga/nvim-notify" },
-  -- { "rose-pine/neovim" },
-  -- { "meanderingprogrammer/markdown.nvim" },
+  { "rose-pine/neovim" },
   { "iabdelkareem/csharp.nvim" },
-  { 'kepano/flexoki-neovim',                      name = 'flexoki' },
+  {
+    'kepano/flexoki-neovim',
+    name = 'flexoki'
+  },
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy"
   },
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  --   opts = {},
-  -- },
   { "BlackLight/nvim-http" },
   {
     "iamcco/markdown-preview.nvim",
@@ -34,14 +29,7 @@ lvim.plugins = {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  -- {
-  -- "soulis-1256/eagle.nvim",
-  -- branch = "new_features",
-  -- config = true,
-  -- },
 }
--- lvim.keys.normal_mode['l'] = 'h'
--- lvim.keys.normal_mode[';'] = 'l'
 
 
 local wall_min = {
@@ -112,11 +100,19 @@ local amogus = { "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
   "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⢄⠀⠀⠀⠀⡠⠜⠀⠀⠁⠁⠁⠁⠁⠁⠀⠀⠑⢄⣀⡠⠤⠄⠤⠤⠊⠀⠀⠀⠀⠀⠀⠀⠀",
   "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" }
 
-lvim.builtin.alpha.dashboard.section.header.val = amogus
+lvim.builtin.alpha.dashboard.section.header.val = wall_min
 
 local keys = lvim.builtin.which_key.mappings
 
-keys["r"] = { "<cmd>!bash -c make run<cr>", "Run `make run`" }
+keys["m"] = {
+  name = "make",
+  r = { "<cmd>!bash -c make run<cr>", "Run `make run`" },
+  b = { "<cmd>!bash -c make build<cr>", "Run `make build`" },
+}
+lvim.builtin.terminal.open_mapping = "<C-/>"
+
+
+
 
 -- add({
 -- { "<leader>r", "<cmd>terminal make run<cr>" },
