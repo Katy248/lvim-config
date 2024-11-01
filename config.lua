@@ -117,5 +117,10 @@ formatters.setup({
   {
     name = "nixfmt",
     filetypes = { "nix" }
+  },
+  {
+    name = "shfmt",
+    args = { "-s" },
+    filetypes = { "sh" },
   }
 })
