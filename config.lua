@@ -2,32 +2,55 @@ vim.o.mousemoveevent = true
 
 -- visual
 lvim.transparent_window = true
--- lvim.colorscheme = "gruvbox"
--- lvim.colorscheme = "rose-pine-main"
 lvim.colorscheme = "gruvbox"
 
 -- code
 lvim.format_on_save = true
+vim.opt.wrap = true
 
+function test()
+end
 
 lvim.plugins = {
+  -- colorschemes
   { "abdelrahmandwedar/awesome-nvim-colorschemes" },
   { "rose-pine/neovim" },
-  { "iabdelkareem/csharp.nvim" },
+  { "kepano/flexoki-neovim",                      name = 'flexoki' },
+  --
   {
-    'kepano/flexoki-neovim',
-    name = 'flexoki'
+    "rcarriga/nvim-notify",
+    lazy = false,
+    config = function()
+      vim.notify = require("notify")
+    end
   },
+  -- { "meanderingprogrammer/markdown.nvim" },
+  { "iabdelkareem/csharp.nvim" },
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy"
   },
-  { "BlackLight/nvim-http" },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {},
+  -- },
+  -- { "BlackLight/nvim-http" },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    "folke/twilight.nvim",
+    opts = {
+      treesitter = true,
+      dimming = {
+        alpha = 0.25,
+      },
+      context = 20,
+    },
   },
 }
 
