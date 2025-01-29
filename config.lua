@@ -50,6 +50,12 @@ pics_setup()
 local keybindings_setup = require("keys")
 keybindings_setup()
 
+-- lsp
+
+lvim.lsp.installer.setup.automatic_installation = true
+
+-- formatters
+
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
